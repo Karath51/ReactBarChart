@@ -12,7 +12,6 @@ var fruits_list_style = {
 class BarChart extends React.Component {
 
   componentDidMount() {
-    console.log("BarChart didmount")
     this.props.set_state_values()
     /** default props **/
   }

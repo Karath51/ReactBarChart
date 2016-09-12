@@ -49,7 +49,6 @@ const Row = ({row_data, max_value, on_click_bar}) => {
     }
   }
 
-  console.log("row_data", row_data)
   return (
     <div style={styles.row}>
       <h2 style={styles.label}>
