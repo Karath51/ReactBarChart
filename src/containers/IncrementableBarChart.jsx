@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
       data: ownProps.data.map((row, index) => {
         return {
           ...row,
-          value: state.on_click_bar.values[index]
+          value: state.rows_values.values[index]
         }
       })
     }

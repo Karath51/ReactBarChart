@@ -6,7 +6,7 @@ class BarChart extends React.Component {
   }
 
   render() {
-        var max_value = Math.max(...this.props.data.map(function (row) {
+    var max_value = Math.max(...this.props.data.map(function (row) {
       return row.value
     }))
 
