@@ -15,8 +15,10 @@ Quick excercise to to do some React/Redux js
 |-----------------------------------------------------|
 
 Files you should have:
+    README
     index.html
     package.json
+    .gitignore
     src/index.jsx
     src/components/App.jsx
     src/components/BarChart.jsx
@@ -25,7 +27,12 @@ Files you should have:
     src/reducers/rows_values.jsx
     src/data.jsx
     src/back-unique.png
-    README
+
+
+|-----------------------------------------------------|
+
+Run npm install in the root directory of the project
+before running it.
 
 |-----------------------------------------------------|
 

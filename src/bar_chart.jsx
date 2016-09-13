@@ -85,7 +85,7 @@ var DisplayableFruitsList = React.createClass({
     this.update_rows(data_update);
 
     return (
-      <div style={styles.displayable_fruits_list}>
+      <div style={styles.app}>
         <FruitsList data={data_update} row_click={this.on_bar_click}/>
       </div>
     )
@@ -204,7 +204,7 @@ FruitsRow.propTypes = {
 };
 **/
 var styles = {
-  displayable_fruits_list: {
+  app: {
     backgroundImage: 'url(' + '/ReactBarChart/css/img/back-unique.jpg' + ')',
     backgroundSize: 'cover',
     WebkitTransition: 'all'

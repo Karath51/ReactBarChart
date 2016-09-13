@@ -5,7 +5,7 @@ import fruits from '../data'
 class App extends React.Component {
   render = () => {
     return (
-      <div style={styles.displayable_fruits_list}>
+      <div style={styles.app}>
         <IncrementableBarChart data={fruits}/>
       </div>
     )
@@ -13,8 +13,8 @@ class App extends React.Component {
 }
 
 var styles = {
-  displayable_fruits_list: {
-    backgroundImage: 'url(/ReactBarChart/back-unique.jpg)',
+  app: {
+    background: 'grey',
     backgroundSize: 'cover',
     WebkitTransition: 'all'
   }
