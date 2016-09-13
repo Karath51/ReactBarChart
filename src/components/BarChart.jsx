@@ -1,5 +1,49 @@
 import React, { PropTypes } from 'react'
 
+class BarChart extends React.Component {
+  componentDidMount() {
+    this.props.set_state_values()
+  }
+
+  render() {
+        var max_value = Math.max(...this.props.data.map(function (row) {
+      return row.value
+    }))
+
+    return (
+      <div style={styles.list}>
+        {this.props.data.map(row => {
+          return (
+            <Row
+              row_data={row}
+              max_value={max_value}
+              on_bar_click={this.props.on_bar_click}
+              key={row.id}
+            />
+          )}
+        )}
+      </div>
+    )
+  }
+}
+
+BarChart.defaultProps = {
+  data: [],
+  on_bar_click: () => {},
+  set_state_values: () => {}
+}
+
+BarChart.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    label: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    color: PropTypes.string.isRequired,
+  })).isRequired,
+  on_bar_click: PropTypes.func.isRequired,
+  set_state_values: PropTypes.func.isRequired,
+}
+
 const Row = ({row_data, max_value, on_bar_click}) => {
   const bar_style = (row_data, max_value) => {
     var grad = row_data.value / max_value;
@@ -40,35 +84,7 @@ Row.propTypes = {
     color: PropTypes.string.isRequired
   }),
   max_value: PropTypes.number.isRequired,
-  on_click_bar: PropTypes.func.isRequired,
-}
-
-class BarChart extends React.Component {
-
-  componentDidMount() {
-    this.props.set_state_values()
-  }
-  
-  render() {
-    var max_value = Math.max(...this.props.data.map(function (row) {
-      return row.value
-    }))
-
-    return (
-      <div style={styles.list}>
-        {this.props.data.map(row => {
-          return (
-            <Row
-              row_data={row}
-              max_value={max_value}
-              on_bar_click={this.props.on_bar_click}
-              key={row.id}
-            />
-          )}
-        )}
-      </div>
-    )
-  }
+  on_bar_click: PropTypes.func.isRequired,
 }
 
 var styles = {
@@ -110,16 +126,5 @@ var styles = {
     margin: '-10px'
   },
 }
-
-BarChart.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    label: PropTypes.string.isRequired,
-    value: PropTypes.number.isRequired,
-    color: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  on_click_bar: PropTypes.func.isRequired
-}
-
 
 export default BarChart

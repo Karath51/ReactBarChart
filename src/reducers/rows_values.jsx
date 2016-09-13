@@ -2,7 +2,7 @@ const initialState = {
   values: []
 }
 
-const on_click_bar = (state = initialState, action) => {
+const rows_values = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT_VALUE':
       var new_state = [...state.values]
@@ -17,4 +17,4 @@ const on_click_bar = (state = initialState, action) => {
   }
 }
 
-export default on_click_bar
+export default rows_values
