@@ -22,7 +22,7 @@ Files you should have:
     src/components/BarChart.jsx
     src/containers/IncrementableBarChart.jsx
     src/reducers/index.jsx
-    src/reducers/on_click_bar.jsx
+    src/reducers/rows_values.jsx
     src/data.jsx
     src/back-unique.png
     README

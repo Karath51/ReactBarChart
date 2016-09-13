@@ -1,6 +1,16 @@
 import React from 'react'
-import IncrementedRows from '../containers/IncrementableBarChart'
+import IncrementableBarChart from '../containers/IncrementableBarChart'
 import fruits from '../data'
+
+class App extends React.Component {
+  render = () => {
+    return (
+      <div style={styles.displayable_fruits_list}>
+        <IncrementableBarChart data={fruits}/>
+      </div>
+    )
+  }
+}
 
 var styles = {
   displayable_fruits_list: {
@@ -9,16 +19,5 @@ var styles = {
     WebkitTransition: 'all'
   }
 }
-
-class App extends React.Component {
-  render = () => {
-    return (
-      <div style={styles.displayable_fruits_list}>
-        <IncrementedRows data={fruits}/>
-      </div>
-    )
-  }
-}
-
 
 export default App

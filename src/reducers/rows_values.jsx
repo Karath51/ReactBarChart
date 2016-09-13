@@ -2,8 +2,6 @@ const initialState = {
   values: []
 }
 
-/** action.original is the result of data.map(fruit_stat) in action **/
-
 const on_click_bar = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT_VALUE':

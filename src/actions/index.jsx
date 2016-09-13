@@ -5,7 +5,7 @@ export const increment_value = (row_id) => {
   }
 }
 
-export const set_state_values = (original_data) => {
+export const set_initial_values = (original_data) => {
   return {
     type: 'SET_VALUE',
     original_values: original_data.map((row) => {

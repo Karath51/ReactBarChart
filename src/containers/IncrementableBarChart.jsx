@@ -1,10 +1,8 @@
 import { connect } from 'react-redux'
-import { increment_value } from '../actions'
-import { set_state_values } from '../actions'
+import { increment_value, set_initial_values } from '../actions'
 import BarChart from '../components/BarChart'
 
 const mapStateToProps = (state, ownProps) => {
-  /** Bug if state.on_click_bar.fruits_statistic **/
   if (typeof state.on_click_bar.values[0] === 'undefined')
   {
     return {...ownProps}
@@ -21,21 +19,20 @@ const mapStateToProps = (state, ownProps) => {
   
 }
 
-/** Add on_bar_click in the props of BarChart **/
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    on_click_bar: (id) => {
+    on_bar_click: (id) => {
       dispatch(increment_value(id))
     },
     set_state_values: () => {
-      dispatch(set_state_values(ownProps.data))
+      dispatch(set_initial_values(ownProps.data))
     }
   }
 }
 
-const IncrementedRows = connect(
+const IncrementableBarChart = connect(
   mapStateToProps,
   mapDispatchToProps
 )(BarChart)
 
-export default IncrementedRows
+export default IncrementableBarChart
